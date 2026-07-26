@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seshapu Bala Manikanta &amp; Co | Chartered Accountants, Eluru</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0f2a49;
+    --navy-deep: #0a1d34;
+    --olive: #6f8c3e;
+    --olive-light: #8aab4f;
+    --gold: #b6903f;
+    --paper: #f5f2e9;
+    --paper-line: #dcd6c4;
+    --ink: #1c1c1a;
+    --ink-soft: #4a4a45;
+    --cream-card: #fffdf7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .serif{font-family:'Fraunces',serif;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px;}
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    border-bottom:1px solid rgba(182,144,63,0.35);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width:1140px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .seal-mini{
+    width:40px;height:40px;border-radius:50%;
+    border:1.5px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold); font-family:'Fraunces',serif; font-weight:600; font-size:15px;
+    flex-shrink:0;
+  }
+  .brand-text{line-height:1.15;}
+  .brand-text .name{color:#f5f2e9; font-family:'Fraunces',serif; font-size:16px; font-weight:600; letter-spacing:.2px;}
+  .brand-text .role{color:var(--olive-light); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; margin-top:2px;}
+  .header-cta{
+    display:flex; gap:10px; align-items:center;
+  }
+  .btn-call{
+    background:var(--olive); color:#fff; font-size:13px; font-weight:600;
+    padding:10px 18px; border-radius:2px; letter-spacing:.3px;
+    display:flex; align-items:center; gap:8px;
+    transition:background .2s ease;
+  }
+  .btn-call:hover{background:var(--olive-light);}
+  .btn-call svg{width:14px;height:14px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#f5f2e9;
+    position:relative;
+    padding:88px 0 96px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(245,242,233,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,242,233,0.045) 1px, transparent 1px);
+    background-size:38px 38px;
+    mask-image:radial-gradient(ellipse at 30% 30%, black 0%, transparent 70%);
+  }
+  .hero-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.15fr .85fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    color:var(--olive-light); font-size:12px; letter-spacing:2.5px; text-transform:uppercase;
+    font-weight:600; margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--gold);}
+  .hero h1{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(34px,4.4vw,54px);
+    line-height:1.08; letter-spacing:-.5px; max-width:11.5ch;
+  }
+  .hero h1 em{font-style:italic; color:var(--gold); font-weight:500;}
+  .hero p.lede{
+    margin-top:22px; font-size:16.5px; line-height:1.7; color:#cfd6de; max-width:46ch;
+  }
+  .hero-actions{margin-top:34px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--gold); color:var(--navy-deep); font-weight:700; font-size:14px;
+    padding:14px 26px; letter-spacing:.3px; border-radius:2px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(182,144,63,0.3);}
+  .btn-ghost{
+    border:1px solid rgba(245,242,233,0.35); color:#f5f2e9; font-weight:600; font-size:14px;
+    padding:13px 24px; border-radius:2px;
+  }
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold);}
+
+  .seal{
+    position:relative; width:100%; max-width:340px; margin:0 auto;
+    aspect-ratio:1/1; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #14335a, var(--navy-deep));
+    border:2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 8px rgba(182,144,63,0.08), 0 20px 60px rgba(0,0,0,0.45);
+  }
+  .seal-ring{
+    position:absolute; inset:16px; border-radius:50%; border:1px dashed rgba(182,144,63,0.55);
+  }
+  .seal-inner{text-align:center; padding:0 30px;}
+  .seal-inner .ca{
+    font-family:'Fraunces',serif; font-size:44px; font-weight:700; color:var(--gold); line-height:1;
+  }
+  .seal-inner .sub{
+    margin-top:10px; font-size:10.5px; letter-spacing:3px; color:#dcd6c4; text-transform:uppercase;
+  }
+  .seal-inner .line{width:36px; height:1px; background:var(--gold); margin:12px auto;}
+  .seal-inner .est{font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8fa0b3; letter-spacing:1.5px;}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip{
+    background:var(--cream-card); border-bottom:1px solid var(--paper-line);
+  }
+  .trust-strip .wrap{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    padding:22px 28px;
+  }
+  .trust-item{
+    display:flex; align-items:center; gap:12px; padding:0 18px;
+    border-left:1px solid var(--paper-line);
+  }
+  .trust-item:first-child{border-left:none; padding-left:0;}
+  .trust-item svg{width:20px; height:20px; color:var(--olive); flex-shrink:0;}
+  .trust-item span{font-size:13px; font-weight:600; color:var(--navy); letter-spacing:.2px;}
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section{padding:88px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--olive);
+    letter-spacing:2px; text-transform:uppercase; margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .section-tag::before{content:"";width:20px;height:1px;background:var(--gold);}
+  .section-head h2{
+    font-family:'Fraunces',serif; font-weight:600; font-size:clamp(26px,3vw,36px);
+    color:var(--navy); line-height:1.2;
+  }
+  .section-head p{margin-top:14px; color:var(--ink-soft); font-size:15.5px; line-height:1.7;}
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--cream-card);}
+  .about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center;}
+  .about-card{
+    background:var(--navy); color:#f5f2e9; padding:44px 36px; position:relative;
+    border-left:4px solid var(--gold);
+  }
+  .about-card .initials{
+    font-family:'Fraunces',serif; font-size:52px; font-weight:700; color:var(--gold); line-height:1;
+  }
+  .about-card h3{font-family:'Fraunces',serif; font-size:22px; margin-top:16px; font-weight:600;}
+  .about-card .cred{font-size:13px; color:var(--olive-light); margin-top:6px; letter-spacing:.3px;}
+  .about-card .role{font-size:13px; font-style:italic; color:#cfd6de; margin-top:2px;}
+  .about-card .tagline{
+    margin-top:26px; padding-top:22px; border-top:1px solid rgba(245,242,233,0.15);
+    font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--gold);
+  }
+  .about-copy p{color:var(--ink-soft); font-size:15.5px; line-height:1.8; margin-bottom:16px;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .about-copy strong{color:var(--navy);}
+
+  /* ---------- SERVICES ---------- */
+  .services{background:var(--paper);}
+  .service-lead{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--paper-line); border:1px solid var(--paper-line); margin-bottom:1px;
+  }
+  .service-lead .card{
+    background:var(--navy); color:#f5f2e9; padding:36px 30px;
+    position:relative;
+  }
+  .service-lead .card .num{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:2px;
+  }
+  .service-lead .card h3{
+    font-family:'Fraunces',serif; font-size:21px; font-weight:600; margin-top:16px; line-height:1.25;
+  }
+  .service-lead .card p{font-size:13.5px; color:#c8d0d9; margin-top:12px; line-height:1.65;}
+
+  .service-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--paper-line); border:1px solid var(--paper-line);
+  }
+  .service-grid .card{
+    background:var(--cream-card); padding:28px 26px;
+  }
+  .service-grid .card h4{
+    font-family:'Fraunces',serif; font-size:16.5px; font-weight:600; color:var(--navy);
+  }
+  .service-grid .card p{font-size:13px; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+
+  /* ---------- WHO WE SERVE ---------- */
+  .clients{background:var(--navy); color:#f5f2e9; position:relative; overflow:hidden;}
+  .clients::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(245,242,233,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,242,233,0.04) 1px, transparent 1px);
+    background-size:34px 34px;
+  }
+  .clients .wrap{position:relative; z-index:2;}
+  .clients .section-head h2{color:#f5f2e9;}
+  .clients .section-head p{color:#c8d0d9;}
+  .clients .section-tag{color:var(--olive-light);}
+  .client-row{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:12px;
+  }
+  .client-tile{
+    border:1px solid rgba(245,242,233,0.15); padding:26px 20px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .client-tile:hover{border-color:var(--gold); background:rgba(182,144,63,0.06);}
+  .client-tile .mono{font-size:11px; color:var(--gold); letter-spacing:1.5px;}
+  .client-tile h4{font-family:'Fraunces',serif; font-size:16px; margin-top:10px; font-weight:600;}
+  .client-tile p{font-size:12.5px; color:#a9b4c0; margin-top:8px; line-height:1.55;}
+
+  /* ---------- PROCESS (real sequence => numbered) ---------- */
+  .process{background:var(--cream-card);}
+  .steps{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; margin-top:8px;
+  }
+  .steps::before{
+    content:""; position:absolute; top:19px; left:6%; right:6%; height:1px; background:var(--paper-line);
+  }
+  .step{position:relative; padding-right:22px;}
+  .step .dot{
+    width:38px; height:38px; border-radius:50%; background:var(--navy); color:var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600;
+    border:1px solid var(--gold); position:relative; z-index:2;
+  }
+  .step h4{font-family:'Fraunces',serif; font-size:16px; margin-top:18px; color:var(--navy); font-weight:600;}
+  .step p{font-size:13px; color:var(--ink-soft); margin-top:8px; line-height:1.6;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--navy-deep); color:#f5f2e9; position:relative;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  .contact .section-tag{color:var(--olive-light);}
+  .contact h2{font-family:'Fraunces',serif; font-size:clamp(26px,3vw,36px); font-weight:600; color:#f5f2e9;}
+  .contact p.lede{margin-top:14px; color:#b8c1cb; font-size:15px; line-height:1.7; max-width:42ch;}
+  .contact-list{margin-top:32px; display:flex; flex-direction:column; gap:22px;}
+  .contact-row{display:flex; gap:16px; align-items:flex-start;}
+  .contact-row .ic{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--gold); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-row .ic svg{width:16px;height:16px;}
+  .contact-row .label{font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--olive-light); font-weight:600;}
+  .contact-row .val{font-size:15.5px; margin-top:4px; font-family:'IBM Plex Mono',monospace; letter-spacing:.2px;}
+  .contact-row .val a:hover{color:var(--gold);}
+
+  .contact-card{
+    background:#0f2a49; border:1px solid rgba(182,144,63,0.35); padding:40px 34px;
+  }
+  .contact-card .tagline{
+    font-family:'Fraunces',serif; font-style:italic; font-size:19px; color:var(--gold); line-height:1.4;
+  }
+  .contact-card .rule{width:44px; height:1px; background:var(--gold); margin:22px 0;}
+  .contact-card p{font-size:13.5px; color:#c8d0d9; line-height:1.7;}
+  .contact-card .cta-row{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+
+  footer{
+    background:var(--navy-deep); border-top:1px solid rgba(245,242,233,0.1);
+    padding:26px 0; text-align:center;
+  }
+  footer p{font-size:12px; color:#7c8794; letter-spacing:.3px;}
+
+  /* ---------- STICKY MOBILE CALL BAR ---------- */
+  .mobile-bar{
+    display:none;
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:44px;}
+    .seal{max-width:260px;}
+    .about-grid{grid-template-columns:1fr;}
+    .service-lead, .service-grid{grid-template-columns:1fr;}
+    .client-row{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr); row-gap:36px;}
+    .steps::before{display:none;}
+    .contact-grid{grid-template-columns:1fr;}
+    .trust-strip .wrap{grid-template-columns:1fr; gap:14px;}
+    .trust-item{border-left:none; padding-left:0; border-top:1px solid var(--paper-line); padding-top:14px;}
+    .trust-item:first-child{border-top:none; padding-top:0;}
+    body{padding-bottom:64px;}
+    .mobile-bar{
+      display:flex; position:fixed; bottom:0; left:0; right:0; z-index:60;
+      background:var(--navy); border-top:1px solid var(--gold);
+    }
+    .mobile-bar a{
+      flex:1; text-align:center; padding:15px 8px; font-size:13px; font-weight:700;
+      color:#f5f2e9; letter-spacing:.3px;
+    }
+    .mobile-bar a:first-child{background:var(--olive); color:#fff;}
+    .mobile-bar a:last-child{color:var(--gold);}
+  }
+  @media (max-width:560px){
+    .client-row{grid-template-columns:1fr;}
+    .steps{grid-template-columns:1fr;}
+    .header-cta .btn-call span{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="seal-mini">CA</div>
+      <div class="brand-text">
+        <div class="name">Seshapu Bala Manikanta &amp; Co</div>
+        <div class="role">Chartered Accountants</div>
+      </div>
+    </div>
+    <div class="header-cta">
+      <a class="btn-call" href="tel:+918497995818">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>Call Now</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Eluru, Andhra Pradesh</div>
+      <h1>Your success is <em>our commitment</em></h1>
+      <p class="lede">A practising Chartered Accountant firm handling income tax filings, tax audit under Section 44AB, and loan projection &amp; CMA data for businesses and individuals across Eluru and the surrounding district.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="tel:+918497995818">Call 84979 95818</a>
+        <a class="btn-ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="seal">
+      <div class="seal-ring"></div>
+      <div class="seal-inner">
+        <div class="ca">CA</div>
+        <div class="line"></div>
+        <div class="sub">Chartered Accountant</div>
+        <div class="est mono">B.COM · A.C.A</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.1-2.8-2.8L7 14"/></svg>
+      <span>Expert Advice</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg>
+      <span>Accurate Solutions</span>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span>Trusted Partner</span>
+    </div>
+  </div>
+</div>
+
+<section class="about reveal">
+  <div class="wrap about-grid">
+    <div class="about-card">
+      <div class="initials">SBM</div>
+      <h3>Seshapu Bala Manikanta</h3>
+      <div class="cred">B.Com., A.C.A.</div>
+      <div class="role">Chartered Accountant</div>
+      <div class="tagline">"Your success is our commitment"</div>
+    </div>
+    <div class="about-copy">
+      <div class="section-tag">About the Firm</div>
+      <h2 style="font-family:'Fraunces',serif; font-weight:600; font-size:clamp(24px,2.8vw,32px); color:var(--navy); margin-bottom:18px;">Practical accounting, built on close attention to detail</h2>
+      <p><strong>Seshapu Bala Manikanta &amp; Co</strong> is a Chartered Accountant practice based in Eluru, working with proprietors, partnership firms, private companies, and individual taxpayers across the district.</p>
+      <p>The firm's focus is on the work that has the most bearing on a business's financial standing — accurate income tax filing, tax audit compliance, and the loan projections and CMA data that banks require for working capital and term loans.</p>
+      <p>Alongside this, the firm handles GST filing, bookkeeping, and statutory audit for businesses that need ongoing compliance support, including agri-processing and export-oriented units common to this region.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services reveal" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Services</div>
+      <h2>Built around what businesses need most</h2>
+      <p>Three areas the firm handles in depth, supported by the day-to-day compliance work that keeps a business filing-ready year round.</p>
+    </div>
+
+    <div class="service-lead">
+      <div class="card">
+        <div class="num mono">01</div>
+        <h3>Income Tax Filing</h3>
+        <p>Return preparation and filing for individuals, proprietors, firms, and companies — with attention to deductions, advance tax planning, and assessment support.</p>
+      </div>
+      <div class="card">
+        <div class="num mono">02</div>
+        <h3>Tax Audit (Sec. 44AB)</h3>
+        <p>Statutory tax audit for businesses and professionals crossing the prescribed turnover threshold, with accurate books and timely certification.</p>
+      </div>
+      <div class="card">
+        <div class="num mono">03</div>
+        <h3>Loan Projections &amp; CMA Data</h3>
+        <p>Financial projections, CMA data, and project reports prepared for bank loan applications — working capital, term loans, and MSME credit.</p>
+      </div>
+    </div>
+
+    <div class="service-grid">
+      <div class="card">
+        <h4>GST Registration &amp; Filing</h4>
+        <p>Monthly and quarterly return filing, reconciliation, and registration for new businesses.</p>
+      </div>
+      <div class="card">
+        <h4>Bookkeeping</h4>
+        <p>Regular books of account maintained accurately, keeping a business audit-ready throughout the year.</p>
+      </div>
+      <div class="card">
+        <h4>Statutory Audit</h4>
+        <p>Annual audit and financial statement preparation for companies, firms, and trusts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients reveal" id="clients">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Who We Serve</div>
+      <h2>Clients across Eluru's business landscape</h2>
+      <p>From individual taxpayers to established local businesses, with particular familiarity with the sectors that define this district.</p>
+    </div>
+    <div class="client-row">
+      <div class="client-tile">
+        <div class="mono">01</div>
+        <h4>Rice Mills</h4>
+        <p>Statutory audit, GST, and bank loan documentation for the district's core industry.</p>
+      </div>
+      <div class="client-tile">
+        <div class="mono">02</div>
+        <h4>Aqua &amp; Export Units</h4>
+        <p>GST and compliance support for prawn and seafood processing businesses.</p>
+      </div>
+      <div class="client-tile">
+        <div class="mono">03</div>
+        <h4>Traders &amp; MSMEs</h4>
+        <p>Bookkeeping, GST, and income tax for small and mid-size businesses.</p>
+      </div>
+      <div class="client-tile">
+        <div class="mono">04</div>
+        <h4>Individuals &amp; Professionals</h4>
+        <p>Personal income tax filing, planning, and assessment representation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">How It Works</div>
+      <h2>A straightforward process, start to finish</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="dot">01</div>
+        <h4>Consultation</h4>
+        <p>A discussion on your business or personal filing needs and current compliance status.</p>
+      </div>
+      <div class="step">
+        <div class="dot">02</div>
+        <h4>Document Collection</h4>
+        <p>Financial records, invoices, and prior filings gathered and reviewed.</p>
+      </div>
+      <div class="step">
+        <div class="dot">03</div>
+        <h4>Preparation</h4>
+        <p>Returns, audit reports, or projections prepared with careful review.</p>
+      </div>
+      <div class="step">
+        <div class="dot">04</div>
+        <h4>Filing &amp; Certification</h4>
+        <p>Submission within deadline, with certification and follow-up support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-tag">Get in Touch</div>
+      <h2>Speak with the firm directly</h2>
+      <p class="lede">For income tax filing, tax audit, loan projections, or any other compliance matter — reach out by phone, email, or visit the office.</p>
+
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="label">Phone</div>
+            <div class="val"><a href="tel:+918497995818">84979 95818</a> &nbsp;·&nbsp; <a href="tel:+918328549941">83285 49941</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div>
+          <div>
+            <div class="label">Email</div>
+            <div class="val"><a href="mailto:tbtaxaudit@gmail.com">tbtaxaudit@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="label">Office</div>
+            <div class="val" style="font-family:'Inter',sans-serif; font-size:14.5px;">#3A-3-8, Behind YMHA Hall,<br>Flower Market Road, Eluru-1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="tagline">"Your success is our commitment"</div>
+      <div class="rule"></div>
+      <p>Seshapu Bala Manikanta &amp; Co works closely with each client, keeping filings accurate and deadlines met — whether it's a single return or a full year of compliance.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="tel:+918497995818">Call Now</a>
+        <a class="btn-ghost" href="mailto:tbtaxaudit@gmail.com">Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; <span id="year"></span> Seshapu Bala Manikanta &amp; Co, Chartered Accountants — Eluru, Andhra Pradesh</p>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+918497995818">Call Now</a>
+  <a href="mailto:tbtaxaudit@gmail.com">Email</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12});
+  reveals.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
